@@ -1,0 +1,6 @@
+# Compiled Java files
+*.class
+
+# Build folders
+out/
+bin/
