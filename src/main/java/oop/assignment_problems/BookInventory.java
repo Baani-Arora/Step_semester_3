@@ -1,4 +1,4 @@
-package oop.assigment_problems;
+package oop.assignment_problems;
 
 class BookInventory {
 
