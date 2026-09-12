@@ -2,16 +2,17 @@ package oop.assignment_problems;
 
 class ReferenceOnlyLoanReceipt extends LoanReceipt {
 
-    private String roomNumber;
+    private final int referenceCount;
 
-    public ReferenceOnlyLoanReceipt(String memberId, String[] bookIds, String roomNumber) {
+    public ReferenceOnlyLoanReceipt(String memberId,
+                                    String[] bookIds,
+                                    int referenceCount) {
 
         super(memberId, bookIds);
-
-        this.roomNumber = roomNumber;
+        this.referenceCount = referenceCount;
     }
 
-    public String getRoomNumber() {
-        return roomNumber;
+    public int getReferenceCount() {
+        return referenceCount;
     }
 }
