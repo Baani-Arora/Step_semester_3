@@ -23,16 +23,9 @@ class AccessChecker {
                         ? "ALLOWED" : "DENIED";
 
             case "protected":
-                switch (accessorContext) {
-
-                    case "SAME_CLASS":
-                    case "SAME_PACKAGE":
-                    case "SUBCLASS_DIFFERENT_PACKAGE_OWN_TYPE":
-                        return "ALLOWED";
-
-                    default:
-                        return "DENIED";
-                }
+                return (accessorContext.equals("SAME_CLASS")
+                        || accessorContext.equals("SAME_PACKAGE"))
+                        ? "ALLOWED" : "DENIED";
 
             case "public":
                 return "ALLOWED";
@@ -60,7 +53,6 @@ class AccessChecker {
     public static void main(String[] args) {
 
         System.out.println(classifyAccess("private", "SAME_CLASS"));
-        System.out.println(classifyAccess("protected", "DIFFERENT_PACKAGE"));
 
         String[][] sample = {
                 {"default", "SAME_PACKAGE"},
